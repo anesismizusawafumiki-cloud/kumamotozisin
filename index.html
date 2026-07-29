@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【社内共有】大規模災害時における特別単価適用および協力会社への対応方針</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .policy-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #2563eb;
+        }
+        
+        .policy-card.warning {
+            border-left: 6px solid #ea580c;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="mb-10 border-b-2 border-gray-200 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full border border-red-200">社内外秘 / 各課長・現場担当者向け</span>
+                <span class="text-sm text-gray-500">株式会社アネシス 代表取締役 水澤文希</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+                大規模災害発生時における<br class="hidden sm:block">特別単価適用および協力会社への対応方針
+            </h1>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+                熊本地震の実態調査結果を踏まえ、今後の大規模災害（特需）発生時における当社の価格設定、および協力会社への対応方針を以下の通り定めます。各課にて方針を共有し、徹底してください。
+            </p>
+        </header>
+
+        <!-- Policy Directives -->
+        <section class="mb-12 space-y-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                現場対応の基本ルール（2箇条）
+            </h2>
+
+            <div class="policy-card p-6 sm:p-8">
+                <h3 class="text-lg font-bold text-blue-700 mb-3">1. 顧客への「非常時特別単価」の適用</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>災害発生地域での案件において、<span class="font-bold text-red-600 underline">通常の施工金額にとらわれない</span>こと。</li>
+                    <li>現地の需給バランスやインフラ状況を鑑み、必ず「非常時特別単価」を設定して見積もり・請求を行うこと。</li>
+                    <li>現在、顧客との間で固定単価の縛りはないため、原価高騰分を適切に反映し、自社のマージンを確実に確保すること。</li>
+                </ul>
+            </div>
+
+            <div class="policy-card warning p-6 sm:p-8">
+                <h3 class="text-lg font-bold text-orange-700 mb-3">2. 協力会社からの「単価引き上げ」要求への対応</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>該当地域の外注（協力会社）から、労務費や資材費の高騰を理由とした単価引き上げの要請があった場合は、<span class="font-bold text-red-600 underline">原則としてそれを受け入れる</span>こと。</li>
+                    <li>災害時において最も重要なのは「職人の確保」と「初動のスピード」。外注費が上がった分は、上記1の通り顧客への請求単価に反映させれば問題ない。</li>
+                    <li>「有事の混乱期でも、アネシスは適正な単価で発注・支払いをしてくれる」という信頼を構築し、協力会社への求心力を高めることを最優先とする。</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-100 p-4 rounded-lg text-sm text-gray-600 mt-4 border border-gray-300">
+                <span class="font-bold text-gray-800">※特記事項：</span> 本件について、現場での判断に迷うケースがあれば、自己判断せず速やかに上長または社長へ相談すること。
+            </div>
+        </section>
+
+        <!-- Background Data (Logical Backing) -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold text-gray-900 mb-6 border-b border-gray-300 pb-2">
+                【参考】方針決定の背景データ（熊本地震の実態調査より）
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Labor Cost Chart -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-2">背景1：労務単価の急激な高騰</h3>
+                    <p class="text-xs text-gray-500 mb-4 h-12">
+                        災害時は大工やサッシ工などの単価が急騰する。協力会社への支払いを抑制すると職人離れを起こすため、単価アップを受け入れ、それを顧客へ転嫁する構造が必須となる。
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="laborChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Infrastructure Chart -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-2">背景2：インフラ寸断によるスピードの重要性</h3>
+                    <p class="text-xs text-gray-500 mb-4 h-12">
+                        電気・水道・ガスなどインフラの復旧には時間がかかる。法人顧客（店舗等）の営業再開を早めるためには、多少のコスト増よりも「即応できる職人の確保」が最優先される。
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="infraChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 背景1：労務単価推移（抜粋版）
+            const ctxLabor = document.getElementById('laborChart').getContext('2d');
+            new Chart(ctxLabor, {
+                type: 'bar',
+                data: {
+                    labels: ['配管工', '電工', '大工', 'サッシ工', '内装工'],
+                    datasets: [
+                        { label: '平時単価 (円)', data: [21900, 22300, 25800, 32300, 27300], backgroundColor: '#e5e7eb' },
+                        { label: '被災後単価 (円)', data: [23600, 24400, 28400, 35800, 30000], backgroundColor: '#ea580c' }
+                    ]
+                },
+                options: { 
+                    maintainAspectRatio: false, 
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12 } }
+                    }
+                }
+            });
+
+            // 背景2：インフラ復旧推移
+            const ctxInfra = document.getElementById('infraChart').getContext('2d');
+            new Chart(ctxInfra, {
+                type: 'line',
+                data: {
+                    labels: ['発災直後', '2日後', '4日後', '1週間後', '2週間後'],
+                    datasets: [
+                        { label: '電気 (%)', data: [15, 95, 100, 100, 100], borderColor: '#f59e0b', tension: 0.3, fill: false },
+                        { label: '水道 (%)', data: [10, 20, 40, 60, 95], borderColor: '#3b82f6', tension: 0.3, fill: false }
+                    ]
+                },
+                options: { 
+                    maintainAspectRatio: false, 
+                    responsive: true, 
+                    plugins: { 
+                        tooltip: { mode: 'index', intersect: false },
+                        legend: { position: 'bottom', labels: { boxWidth: 12 } }
+                    } 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
